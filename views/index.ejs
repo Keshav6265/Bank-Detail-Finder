@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1 class="heading"><span>Let's find Your Bank ✌️</span></h1>
+    <form action="/" id="form" class="form" method="POST">
+        <input type="text" id="ifsccode" name="ifsccode" autocomplete="off" placeholder="Please Enter IFSC CODE">
+        <input class="input" type="submit" value="Submit">
+    </form>
+<div class="data">
+    <% if(locals.error) {%>
+        <h3>Type the new/valid IFSC code of your bank</h3>
+    <% } %>
+
+    <% if(locals.data){ %>
+        <h4>Bank:</h4><p><%=data.BANK %></p><br>
+        <h4>Branch:</h4><p><%=data.BRANCH %></p><br>
+        <h4>Adress:</h4><p><%=data.ADDRESS %></p><br>
+        <h4>City:</h4><p><%=data.CITY %></p><br>
+        <h4>State:</h4><p><%=data.STATE %></p><br>
+    <% } %>
+</div>
+</body>
+
+</html>
